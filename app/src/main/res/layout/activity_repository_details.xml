@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="repositoryItem"
+            type="com.nikhil.motialoswaltask.data.local.db.entity.RepositoryEntity" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+    </data>
+
+    <RelativeLayout
+        android:background="@android:color/darker_gray"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.repositorydetails.RepositoryDetailsActivity">
+
+        <com.google.android.material.card.MaterialCardView
+            app:cardCornerRadius="@dimen/cardview_default_radius"
+            android:elevation="@dimen/card_elevation"
+            android:layout_margin="@dimen/margin4x"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="@dimen/padding4x"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="center"
+                    android:layout_width="@dimen/imagesize4x"
+                    android:layout_height="@dimen/imagesize4x"
+                    android:layout_marginBottom="@dimen/margin2x"
+                    app:profileImage="@{imageUrl}"
+                    />
+
+                <TextView
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:padding="@dimen/padding1x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{repositoryItem.fullName}"
+                    />
+
+                <TextView
+                   android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:padding="@dimen/padding1x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{repositoryItem.language}"
+                    android:layout_marginBottom="@dimen/margin2x"
+                    />
+
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/margin2x"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/padding2x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:text="@{String.valueOf(repositoryItem.stargazersCount)}"
+                            android:padding="@dimen/padding1x"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="@string/stargazers_label"
+                            android:padding="@dimen/padding1x"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/margin2x"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:text="@{String.valueOf(repositoryItem.watchers)}"
+                            android:padding="@dimen/padding1x"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="@string/watchers_label"
+                            android:padding="@dimen/padding1x"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/margin2x"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:text="@{String.valueOf(repositoryItem.forksCount)}"
+                            android:padding="@dimen/padding1x"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="@string/forks_label"
+                            android:padding="@dimen/padding1x"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:padding="@dimen/padding1x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{repositoryItem.description}"
+                    android:layout_marginBottom="@dimen/margin2x"
+                    />
+
+                 <Button
+                     android:id="@+id/btn_visit"
+                     android:padding="@dimen/padding2x"
+                     android:text="@string/btn_label"
+                     android:layout_gravity="center"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+</layout>

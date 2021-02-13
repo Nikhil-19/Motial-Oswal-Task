@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MotialOswalTask</string>
+    <string name="stargazers_label">Stargazers</string>
+    <string name="watchers_label">Watchers</string>
+    <string name="btn_label">Visit</string>
+    <string name="forks_label">Forks</string>
+    <string name="error_msg">SomeThing went Wrong !!</string>
+</resources>

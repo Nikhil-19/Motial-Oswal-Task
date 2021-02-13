@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="repositoryItem"
+            type="com.nikhil.motialoswaltask.data.local.db.entity.RepositoryEntity" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:elevation="@dimen/card_elevation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/radius2x">
+
+        <LinearLayout
+            android:padding="@dimen/padding4x"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    app:profileImage="@{imageUrl}"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:padding="@dimen/padding1x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{repositoryItem.fullName}" />
+
+                    <TextView
+                        android:padding="@dimen/padding1x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{repositoryItem.name}" />
+
+                </LinearLayout>
+
+                </LinearLayout>
+
+            <TextView
+                android:textColor="@android:color/holo_blue_light"
+                android:layout_marginTop="@dimen/margin2x"
+                android:padding="@dimen/padding2x"
+                android:text="@{repositoryItem.htmlUrl}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/margin2x"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_marginTop="@dimen/padding3x"
+                    android:padding="@dimen/padding1x"
+                    android:background="@android:color/holo_red_dark"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"/>
+
+                <TextView
+                    android:layout_marginLeft="@dimen/margin1x"
+                    android:gravity="start"
+                    android:textColor="@android:color/black"
+                    android:padding="@dimen/padding1x"
+                    android:layout_weight="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{repositoryItem.language}" />
+
+                <TextView
+                    android:gravity="end"
+                    android:textColor="@android:color/black"
+                    android:padding="@dimen/padding1x"
+                    android:layout_weight="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{repositoryItem.ownerInfo.type}"/>
+
+            </LinearLayout>
+
+            <View
+                android:padding="@dimen/padding1x"
+                android:layout_marginTop="@dimen/margin1x"
+                android:background="@drawable/divider_black"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
